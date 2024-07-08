@@ -8,7 +8,7 @@ public class Main {
         String B = sc.nextLine();
         boolean flag = true;
 
-        for(int i = 0; i < A.length(); i++){
+        for(int i = 0; i <= A.length(); i++){
             if(A.equals(B)){
                 System.out.println(i);  
                 flag = false;  
