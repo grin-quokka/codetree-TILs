@@ -14,7 +14,7 @@ public class Main {
                 flag = false;  
                 break;
             }
-            B = B.substring(1) + B.substring(0, 1);
+            A = A.substring(1) + A.substring(0, 1);
         }
 
         if(flag){
