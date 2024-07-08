@@ -10,6 +10,12 @@ public class Main {
     }
 
     public static int calc(int N){
-        return (1 + N) * (N / 2) / 10;
+        int pairSum = (1 + N) * (N / 2);
+
+        if( N % 2 == 0){
+            return pairSum / 10;
+        }
+        
+        return (pairSum + ((1 + N) / 2)) / 10;
     }
 }
