@@ -24,7 +24,7 @@ public class Main {
 
         int[] days = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        if(days[M] < D){
+        if(days[M - 1] < D){
             return false;
         }
 
