@@ -39,18 +39,16 @@ public class Main {
     }
 
     public static boolean isLeapYear(int Y){
-        if(Y % 4 != 0){
-            return false;
-        }
-
-        if(Y % 100 == 0){
-            if(Y % 400 == 0){
-                return true;
+        if(Y % 4 == 0){
+            if(Y % 100 == 0){
+                if(Y % 400 == 0){
+                    return true;
+                }
+                return false;
             }
-            return false;
-        }
-
-        return true;
+            return true;
+        }        
+        return false;
     }
 
     public static String getSeason(int M){
