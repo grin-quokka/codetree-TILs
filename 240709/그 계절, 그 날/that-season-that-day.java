@@ -23,7 +23,7 @@ public class Main {
     }
 
     public static int getLastDay(int Y, int M, int D){
-        if(M == 2 ){
+        if(M == 2){
             if(isLeapYear(Y)){
                 return 29;
             }
@@ -31,7 +31,7 @@ public class Main {
             return 28;
         }
 
-        if(M == 4 || M == 6 && M == 9 || M == 11){
+        if(M == 4 || M == 6 || M == 9 || M == 11){
             return 30;
         }
 
