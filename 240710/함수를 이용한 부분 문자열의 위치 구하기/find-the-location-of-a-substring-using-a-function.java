@@ -10,7 +10,7 @@ public class Main {
     }
 
     public static int getStartIndex(String target, String part){
-        for(int i = 0; i < target.length(); i++){
+        for(int i = 0; i < target.length() - part.length(); i++){
             if(target.substring(i, i + part.length()).equals(part)){
                 return i;
             }
