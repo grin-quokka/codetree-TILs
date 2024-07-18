@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-    static int[] daysOfMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int m1 = sc.nextInt();
@@ -15,6 +13,7 @@ public class Main {
     }
 
     public static int getPastDays(int m, int d){
+        int[] daysOfMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int days = 0;
 
         for(int i = 1; i < m; i++){
