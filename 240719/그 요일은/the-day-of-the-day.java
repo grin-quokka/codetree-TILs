@@ -36,7 +36,7 @@ public class Main {
         int cnt = diff / 7;
 
         // 주차를 제외한 나머지가 목표 요일 안에 속하면 1번 더 등장
-        if(diff % 7 <= idxOfTargetDay || diff % 7 == 0){
+        if(diff % 7 >= idxOfTargetDay || diff % 7 == 0){
             cnt += 1;
         }
 
