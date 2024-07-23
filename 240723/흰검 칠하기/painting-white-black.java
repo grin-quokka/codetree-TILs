@@ -7,8 +7,6 @@ public class Main {
         int offset = 100 * 1000;
         String[] tiles = new String[offset * 2];
         int cur = offset;
-        int min_L = offset;
-        int max_R = 0;
         int black = 0;
         int gray = 0;
         int white = 0;
@@ -19,27 +17,19 @@ public class Main {
 
             if(dir.equals("L")){
                 for(int j = cur; j > cur - x; j--){
-                    tiles[j] = tiles[j] == null ? "W" : tiles[j] + "W";
+                    tiles[j] = tiles[j] == null ? "W" : "W" + tiles[j];
                     
                 }
                 cur = cur - x + 1;
             }else{
                 for(int j = cur; j < cur + x; j++){ 
-                    tiles[j] = tiles[j] == null ? "B" : tiles[j] + "B";
+                    tiles[j] = tiles[j] == null ? "B" : "B" + tiles[j];
                 }
                 cur = cur + x - 1;
             }
-
-            if(cur < min_L){
-                min_L = cur;
-            }
-
-            if(cur > max_R){
-                max_R = cur;
-            }
         }
 
-        for(int i = min_L; i <= max_R; i++){
+        for(int i = 0; i < tiles.length; i++){
             String tile = tiles[i];
 
             if(tile == null){
@@ -48,7 +38,7 @@ public class Main {
 
             if(tile.length() >= 4){
                 gray++;
-            }else if(tile.charAt(tile.length() - 1) == 'W'){
+            }else if(tile.charAt(0) == 'W'){
                 white++;
             }else{
                 black++;
