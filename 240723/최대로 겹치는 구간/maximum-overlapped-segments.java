@@ -5,11 +5,11 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int offset = 100;
         int max = 0;
-        int[] line = new int[200];
+        int[] line = new int[201];
         int n = sc.nextInt();
 
 
-        for(int i = 2; i <= n; i++){
+        for(int i = 0; i < n; i++){
             int x1 = sc.nextInt() + offset;
             int x2 = sc.nextInt() + offset;
 
