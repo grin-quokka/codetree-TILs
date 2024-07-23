@@ -49,6 +49,8 @@ public class Main {
                 gray++;
             }else if(i == cur && i == min_L){
                 white++;
+            }else if(i == cur && i == max_R){
+                black++;
             }else if(i < cur){
                 black++;
             }else{
