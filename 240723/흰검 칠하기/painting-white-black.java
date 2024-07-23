@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int offset = 100 * 1000;
-        int[] tiles = new int[offset * 2];
+        String[] tiles = new String[offset * 2];
         int cur = offset;
         int min_L = offset;
         int max_R = 0;
@@ -19,12 +19,13 @@ public class Main {
 
             if(dir.equals("L")){
                 for(int j = cur; j > cur - x; j--){
-                    tiles[j]++;
+                    tiles[j] = tiles[j] == null ? "W" : tiles[j] + "W";
+                    
                 }
                 cur = cur - x + 1;
             }else{
                 for(int j = cur; j < cur + x; j++){ 
-                    tiles[j]++;
+                    tiles[j] = tiles[j] == null ? "B" : tiles[j] + "B";
                 }
                 cur = cur + x - 1;
             }
@@ -39,22 +40,18 @@ public class Main {
         }
 
         for(int i = min_L; i <= max_R; i++){
-            int tile = tiles[i];
+            String tile = tiles[i];
 
-            if(tile < 1){
+            if(tile == null){
                 continue;
             }
 
-            if(tile >= 4){
+            if(tile.length() >= 4){
                 gray++;
-            }else if(i == cur && i == min_L){
+            }else if(tile.charAt(tile.length() - 1) == 'W'){
                 white++;
-            }else if(i == cur && i == max_R){
-                black++;
-            }else if(i < cur){
-                black++;
             }else{
-                white++;
+                black++;
             }
         }
 
