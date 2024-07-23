@@ -5,7 +5,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int max = 0;
-        int[] line = new int[100];
+        int[] line = new int[101];
 
         for(int i = 0; i < n; i++){
             int x1 = sc.nextInt();
