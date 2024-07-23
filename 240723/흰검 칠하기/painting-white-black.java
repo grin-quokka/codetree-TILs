@@ -18,15 +18,15 @@ public class Main {
             String dir = sc.next();
 
             if(dir.equals("L")){
-                cur -= x;
-                for(int j = cur; j < cur + x; j++){
+                for(int j = cur; j > cur - x; j--){
                     tiles[j]++;
                 }
+                cur = cur - x + 1;
             }else{
-                for(int j = cur; j < cur + x; j++){
+                for(int j = cur; j < cur + x; j++){ 
                     tiles[j]++;
                 }
-                cur += x;
+                cur = cur + x - 1;
             }
 
             if(cur < min_L){
@@ -49,7 +49,7 @@ public class Main {
                 gray++;
             }else if(i == cur && i == min_L){
                 white++;
-            }else if(i <= cur){
+            }else if(i < cur){
                 black++;
             }else{
                 white++;
