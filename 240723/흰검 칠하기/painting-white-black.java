@@ -36,9 +36,12 @@ public class Main {
                 continue;
             }
 
-            if(tile.length() >= 4){
+            if(tile.length() >= 4 && tile.indexOf("W") != tile.lastIndexOf("W") && tile.indexOf("B") != tile.lastIndexOf("B")){
                 gray++;
-            }else if(tile.charAt(0) == 'W'){
+                continue;
+            }
+                
+             if(tile.charAt(0) == 'W'){
                 white++;
             }else{
                 black++;
